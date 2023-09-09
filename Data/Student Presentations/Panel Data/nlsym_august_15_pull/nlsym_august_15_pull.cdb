@@ -1,0 +1,1283 @@
+R00001.00    [PG1]                                          Survey Year: 1966
+  PRIMARY VARIABLE
+
+ 
+             IDENTIFICATION CODE, 66
+ 
+IDENTIFICATION CODE  0001 THRU 5225 RESPONDENT'S RECORD NUMBER
+DESCRIPTION: THIS NUMBER WAS ASSIGNED ACCORDING TO THE RECORD NUMBER OF EACH 
+RESPONDENT ON THE TAPE. THE FIRST  RESPONDENT WAS ASSIGNED THE SERIAL NUMBER OF 
+0001: THE SECOND WAS ASSIGNED 0002, ETC.
+ 
+    5225           1 TO 5225: IDENTIFICATION CODE - YM COHORT
+  -------
+    5225
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    5225   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+Min:              1        Max:           5225        Mean:                2613
+ 
+Lead In: None.
+Default Next Question: R00001.01
+--------------------------------------------------------------------------------
+R00022.00    [PG1]                                          Survey Year: 1966
+  PRIMARY VARIABLE
+
+ 
+             AGE, 66
+ 
+AGE
+ 
+14 THRU 24 ACTUAL AGE OF RESPONDENT
+UNIVERSE INFORMATION:
+ALL RESPONDENTS.
+ 
+BIRTH DATES WERE ADDED TO THE TAPE FOR THE FIRST TIME IN OCTOBER 1978, IN THE 
+PROCESS IT WAS DISCOVERED THAT THERE ARE 3 YOUNG MEN IN THE SAMPLE WHOSE AGES DO
+NOT IN FACT FALL WITHIN THE SPECIFIED RANGE (14-24) AS OF APRIL 1, 1966. THESE 
+AGES WERE REPORTED INCORRECTLY BY ANOTHER HOUSEHOLD MEMBER AT THE TIME OF 
+SCREENING. THESE THREE RECORDS HAVE NOT BEEN DELETED FROM THE TAPE NOR HAS THE 
+AGE BEEN CHANGED. THE THREE RESPONDENTS ARE ID3487, ID3664 AND ID4900. THE 
+SAMPLE WAS INTENDED TO BE YM AGES 14-24 AS OF THEIR LAST BIRTHDAY PRIOR TO 
+4/1/66.
+ 
+     687          14
+     669          15
+     693          16
+     604          17
+     516          18
+     399          19
+     293          20
+     298          21
+     348          22
+     357          23
+     361          24
+  -------
+    5225
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    5225   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+Min:             14        Max:             24        Mean:               18.09
+ 
+Lead In: R00021.03[Default]
+Default Next Question: R00022.02
+--------------------------------------------------------------------------------
+R03030.51    [PG1]                                          Survey Year: 1971
+  PRIMARY VARIABLE
+
+ 
+             REGION OF RESIDENCE IN 71 (REVISED)
+ 
+REGION OF RESIDENCE
+ 
+    1538       1 LIVES IN SOUTH
+    2449       0 LIVES IN NON-SOUTH
+  -------
+    3987
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3987   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    1238
+ 
+Lead In: R03030.50[Default]
+Default Next Question: R03030.52
+--------------------------------------------------------------------------------
+R03058.00    [PG1]                                          Survey Year: 1971
+  PRIMARY VARIABLE
+
+ 
+             MARITAL STATUS, 71
+ 
+Household record card
+ 
+    2033       1 MARRIED, SPOUSE PRESENT
+      17       2 MARRIED, SPOUSE ABSENT
+       5       3 WIDOWED
+      70       4 DIVORCED
+     101       5 SEPARATED
+    1761       6 NEVER MARRIED
+  -------
+    3987
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3987   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    1238
+ 
+Lead In: R03057.00[Default]
+Default Next Question: R03059.00
+--------------------------------------------------------------------------------
+R03192.00    [36H]                                          Survey Year: 1971
+  PRIMARY VARIABLE
+
+ 
+             YEAR STARTED WORKING AT CURRENT JOB 71
+ 
+When did you start working for (entry in 36a) (Year)?
+ 
+51 THRU 71 ACTUAL YEAR
+SEE NOTE FOR VARIABLE R(3178.) RELATING TO APPENDIX 17.
+ 
+      15           0 TO 59: 1959 OR EARLIER
+      15          60: 1960
+      21          61: 1961
+      23          62: 1962
+      53          63: 1963
+      65          64: 1964
+     125          65: 1965
+     168          66: 1966
+     192          67: 1967
+     255          68: 1968
+     428          69: 1969
+     600          70: 1970
+    1378          71: 1971
+  -------
+    3338
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3338   VALID SKIP(-4)     649     NON-INTERVIEW(-5)    1238
+ 
+Min:             51        Max:             71        Mean:               69.13
+ 
+Lead In: R03191.00[Default]
+Default Next Question: R03193.00
+--------------------------------------------------------------------------------
+R03194.00    [37A]                                          Survey Year: 1971
+  PRIMARY VARIABLE
+
+ 
+             RATE OF PAY AT CURRENT JOB 71
+ 
+Altogether, how much do you usually earn at this job before deductions?
+ 
+1 THRU 99999 ACTUAL DOLLARS
+$.01 - 999.99 WHEN PER HOUR
+$1.00 - 99999. WHEN OTHER THAN PER HOUR
+ 
+    2680           1 TO 999
+      57        1000 TO 1999
+       5        2000 TO 2999
+       5        3000 TO 3999
+       2        4000 TO 4999
+      12        5000 TO 5999
+      23        6000 TO 6999
+      44        7000 TO 7999
+      50        8000 TO 8999
+      39        9000 TO 9999
+     151       10000 TO 14999
+      38       15000 TO 19999
+       7       20000 TO 24999
+       9       25000 TO 49999
+  -------
+    3122
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3122   VALID SKIP(-4)     865     NON-INTERVIEW(-5)    1238
+ 
+Min:              2        Max:          38000        Mean:             1570.02
+ 
+Lead In: R03193.00[Default]
+Default Next Question: R03195.00
+--------------------------------------------------------------------------------
+R03204.00    [37H]                                          Survey Year: 1971
+  PRIMARY VARIABLE
+
+ 
+             IS R A MEMBER OF UNION/EMPLOYEE ASSOCIATION ON CURRENT JOB 71?
+ 
+Are you a member of that union or employee association?
+ 
+     784       1 YES
+     151       0 NO
+  -------
+     935
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>     935   VALID SKIP(-4)    3052     NON-INTERVIEW(-5)    1238
+ 
+Lead In: R03203.00[Default]
+Default Next Question: R03205.00
+--------------------------------------------------------------------------------
+R03668.00    [96A]                                          Survey Year: 1971
+  PRIMARY VARIABLE
+
+ 
+             # OF DEPENDENTS EXCLUDING WIFE, 71
+ 
+How many persons not counting yourself (or your wife) are dependent upon you for
+at least one-half of their support?
+ 
+0 NONE
+1 THRU 8 ACTUAL NUMBER
+9 NINE OR MORE
+ 
+    3977           0 TO 8: ACTUAL NUMBER   (Go To R03671.00)
+  -------
+    3977
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3977   VALID SKIP(-4)      10     NON-INTERVIEW(-5)    1238
+ 
+Min:              0        Max:              8        Mean:                 .79
+ 
+Lead In: R03667.00[Default]
+Default Next Question: R03669.00
+--------------------------------------------------------------------------------
+R03832.00    [CV]                                           Survey Year: 1971
+  PRIMARY VARIABLE
+
+ 
+             HIGHEST GRADE COMPLETED AS OF 71 (REVISED)
+ 
+HIGHEST GRADE COMPLETED AS OF 1971 (REVISED)
+DATE CREATED: 11 FEB 76
+ 
+       R(3832.)=NA
+       IF R(3852.)<0                                 THEN R(3832.)=NA
+          ELSE DO;
+          1) IF R(3060.)=1 & R(3063.)^=NA             THEN R(3832.)=R(3063.)-1
+          2) IF R(3060.)^=1 & R(2973.)=NA
+                THEN DO;
+                1) IF R(3693.)=1 & R(3694.)>0         THEN R(3832.)=R(3694.)-1
+                2) IF R(3693.)=2 OR 3 & R(3694.)>0    THEN R(3832.)=R(3694.)
+          3) IF R(3060.)^=1 & R(2973.)^=NA & R(2344.)=0
+              & R(2962.)>=0                          THEN R(3832.)=R(2962.)
+          4) IF R(3060.)^=1 & R(2973.)^=NA & R(2344.)=1
+                THEN DO;
+                1) IF R(3090.)^=1 & R(3095.)^=1 & R(3099.)^=1 & R(3110.)^=1
+                    & R(3107.)^=1 & R(3107.)^=7
+                    & R(2962.)>=0                    THEN R(3832.)=R(2962.)
+                2) IF R(3090.)=1 OR R(3095.)=1 OR R(3099.)=1 OR R(3110.)=1
+                   OR R(3107.)=-1 OR 1 & R(2962.)>=0  THEN R(3832.)=R(2962.)+1
+       IF R(1.)=5214                              THEN R(3832.)=0
+       IF R(1.)=4496                              THEN R(3832.)=6
+       IF R(1.)=4799                              THEN R(3832.)=7
+       IF R(1.)=932                               THEN R(3832.)=8
+       IF R(1.)=1286 OR 2694                      THEN R(3832.)=10
+       IF R(1.)=2579, 3635, 4710, OR 4877         THEN R(3832.)=11
+       IF R(1.)=2053, 2325, 2748, 4245, 4632, 4765,
+                  4976, OR 3692                     THEN R(3832.)=12
+       IF R(1.)=113, 245, 752, 875, 3608, 3756,
+                  3975, OR 5045                     THEN R(3832.)=13
+       IF R(1.)=1353, OR 5055                     THEN R(3832.)=14
+       IF R(1.)=913, OR 1938                      THEN R(3832.)=15
+       IF R(1.)=618, 855, 4084, 1076, 1640, 2950, 1639, 311, 653, OR
+                  4003                              THEN R(3832.)=16
+       IF R(1.)=671, 3360, 2068, OR 2673          THEN R(3832.)=18
+    DATE CHANGED: DECEMBER 1977
+ 
+            IF R(1.)=4799
+                                               THEN R(3832.)=6;
+            IF R(1.)=2166,3460
+                                               THEN R(3832.)=8;
+            IF R(1.)=473,2820,3747,4284
+                                               THEN R(3832.)=9;
+            IF R(1.)=1790,2066,2487,4427,4710
+                                               THEN R(3832.)=10;
+            IF R(1.)=2690,2788,3924,4318,4543,4733
+                                               THEN R(3832.)=11;
+            IF R(1.)=311,809,1330,1400,1586,2042,2264,2579,2583,3004,3350,
+                       3428,3585,3756,3825,3898,3941,4479,4726,4777,4861,
+                       4949,5130
+                                               THEN R(3832.)=12;
+            IF R(1.)=1353,2070
+                                               THEN R(3832.)=13;
+            IF R(1.)=147,175,738,4198
+                                               THEN R(3832.)=14;
+            IF R(1.)=1566,3879,4927
+                                               THEN R(3832.)=15;
+       H71=R(3832.);
+       SEE BACKFILL DERIVATION ON R(4100.);
+ 
+DATE CHANGED: OCTOBER 31, 1979
+ 
+TO CORRECT INCONSISTENCIES IN THE DATA BASED ON ALL INFORMATION AVAILABLE.
+ 
+      11       0 NONE
+       1       1 FIRST GRADE
+       4       2 SECOND GRADE
+       8       3 THIRD GRADE
+      12       4 FOURTH GRADE
+      19       5 FIFTH GRADE
+      40       6 SIXTH GRADE
+      62       7 SEVENTH GRADE
+     144       8 EIGHTH GRADE
+     165       9 NINTH GRADE
+     221      10 TENTH GRADE
+     242      11 ELEVENTH GRADE
+    1490      12 TWELFTH GRADE
+     395      13 FIRST YEAR COLLEGE
+     342      14 SECOND YEAR COLLEGE
+     230      15 THIRD YEAR COLLEGE
+     390      16 FOURTH YEAR COLLEGE
+     140      17 FIFTH YEAR COLLEGE
+      70      18 SIXTH+ YEARS COLLEGE
+  -------
+    3986
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3986   VALID SKIP(-4)       1     NON-INTERVIEW(-5)    1238
+ 
+Lead In: R03831.00[Default]
+Default Next Question: R03833.00
+--------------------------------------------------------------------------------
+R04375.10    [PG1]                                          Survey Year: 1976
+  PRIMARY VARIABLE
+
+ 
+             RESIDENCE STATUS IN 76 (REVISED)
+ 
+RESIDENCE STATUS IN 76 (REVISED)
+ 
+       0       1 INITIAL YEAR(1966)
+    1215       2 MOVER
+    2480       3 NONMOVER
+    1530       4 NONINTERVIEW
+  -------
+    5225
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    5225   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    1530
+ 
+Lead In: R04375.08[Default]
+Default Next Question: R04375.11
+--------------------------------------------------------------------------------
+R04375.11    [PG1]                                          Survey Year: 1976
+  PRIMARY VARIABLE
+
+ 
+             REGION OF RESIDENCE IN 76 (REVISED)
+ 
+REGION OF RESIDENCE IN 76 (REVISED)
+ 
+    1465       1 LIVES IN SOUTH
+    2230       0 LIVES IN NON-SOUTH
+  -------
+    3695
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3695   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    1530
+ 
+Lead In: R04375.10[Default]
+Default Next Question: R04375.12
+--------------------------------------------------------------------------------
+R04530.00    [21H]                                          Survey Year: 1976
+  PRIMARY VARIABLE
+
+ 
+             YEAR STARTED WORKING AT CURRENT JOB 76
+ 
+When did you first start working for (entry in 21a)?
+ 
+42 THRU 76 ACTUAL YEAR
+ 
+      21           0 TO 59: 1959 OR EARLIER
+      11          60: 1960
+      14          61: 1961
+      19          62: 1962
+      34          63: 1963
+      49          64: 1964
+      84          65: 1965
+     125          66: 1966
+     119          67: 1967
+     156          68: 1968
+     205          69: 1969
+     175          70: 1970
+     236          71: 1971
+     292          72: 1972
+     357          73: 1973
+     371          74: 1974
+     366          75: 1975
+     705          76: 1976
+  -------
+    3339
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3339   VALID SKIP(-4)     356     NON-INTERVIEW(-5)    1530
+ 
+Min:             54        Max:             76        Mean:               71.94
+ 
+Lead In: R04529.00[Default]
+Default Next Question: R04531.00
+--------------------------------------------------------------------------------
+R04548.00    [22A]                                          Survey Year: 1976
+  PRIMARY VARIABLE
+
+ 
+             TIME UNIT OF RATE OF PAY AT CURRENT JOB 76
+ 
+Altogether, how much do you usually earn at this job before deductions?
+ 
+     666       1 HOURLY
+      25       2 DAILY
+     838       3 WEEKLY
+     164       4 BIWEEKLY
+     433       5 MONTHLY
+     817       6 YEARLY
+      24       7 OTHER
+  -------
+    2967
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    2967   VALID SKIP(-4)     728     NON-INTERVIEW(-5)    1530
+ 
+Lead In: R04547.00[Default]
+Default Next Question: R04549.00
+--------------------------------------------------------------------------------
+R04560.00    [22H]                                          Survey Year: 1976
+  PRIMARY VARIABLE
+
+ 
+             IS R A MEMBER OF UNION/EMPLOYEE ASSOCIATION AT CURRENT JOB 76?
+ 
+Are you a member of that union or employee association?
+ 
+     823       1 YES
+     122       0 NO
+  -------
+     945
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>     945   VALID SKIP(-4)    2750     NON-INTERVIEW(-5)    1530
+ 
+Lead In: R04559.00[Default]
+Default Next Question: R04561.00
+--------------------------------------------------------------------------------
+R05073.00    [64]                                           Survey Year: 1976
+  PRIMARY VARIABLE
+
+ 
+             MARITAL STATUS, 76
+ 
+What is your present marital status?
+ 
+    2556       1 MARRIED, SPOUSE PRESENT
+      19       2 MARRIED, SPOUSE ABSENT
+       3       3 WIDOWED   (Go To R05078.00)
+     197       4 DIVORCED   (Go To R05078.00)
+     136       5 SEPARATED   (Go To R05078.00)
+     775       6 NEVER MARRIED   (Go To R05078.00)
+  -------
+    3686
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3686   VALID SKIP(-4)       9     NON-INTERVIEW(-5)    1530
+ 
+Lead In: R05072.00[Default]  R05062.00[0:0]
+Default Next Question: R05074.00
+--------------------------------------------------------------------------------
+R05348.00    [79B]                                          Survey Year: 1976
+  PRIMARY VARIABLE
+
+ 
+             MARITAL STATUS & BACKGROUND, 76 - YEAR OF 1ST MARRIAGE
+ 
+What was the date of your first marriage?
+ 
+42 THRU 76 ACTUAL YEAR
+ 
+       6           0 TO 59: 1959 OR EARLIER
+      11          60: 1960
+      15          61: 1961
+      15          62: 1962
+      17          63: 1963
+      24          64: 1964
+      23          65: 1965
+      26          66: 1966
+      23          67: 1967
+      25          68: 1968
+      22          69: 1969
+      22          70: 1970
+      23          71: 1971
+       8          72: 1972
+       3          73: 1973
+       1          75: 1975
+  -------
+     264
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>     264   VALID SKIP(-4)    3431     NON-INTERVIEW(-5)    1530
+ 
+Min:             56        Max:             75        Mean:               66.19
+ 
+Lead In: R05347.00[Default]
+Default Next Question: R05349.00
+--------------------------------------------------------------------------------
+R05359.00    [80C]                                          Survey Year: 1976
+  PRIMARY VARIABLE
+
+ 
+             MARITAL STATUS & BACKGROUND, 76 - YEAR DIVORCED
+ 
+When were you divorced?
+ 
+42 THRU 76 ACTUAL YEAR
+ 
+       1          61: 1961
+       1          62: 1962
+       1          64: 1964
+       1          67: 1967
+       1          68: 1968
+       5          69: 1969
+       8          70: 1970
+      10          71: 1971
+      15          72: 1972
+      22          73: 1973
+      33          74: 1974
+      34          75: 1975
+      53          76: 1976
+  -------
+     185
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>     185   VALID SKIP(-4)    3510     NON-INTERVIEW(-5)    1530
+ 
+Min:             61        Max:             76        Mean:               73.75
+ 
+Lead In: R05358.00[Default]
+Default Next Question: R05360.00
+--------------------------------------------------------------------------------
+R05364.00    [81A]                                          Survey Year: 1976
+  PRIMARY VARIABLE
+
+ 
+             # OF DEPENDENTS EXCLUDING WIFE, 76
+ 
+How many persons not counting yourself (or your wife) are dependent upon you for
+at least one-half of their support?
+ 
+00 THRU 98 ACTUAL NUMBER OF DEPENDENTS
+ 
+    3678           0 TO 8: ACTUAL NUMBER   (Go To R05367.00)
+       1           9: 9 OR MORE
+  -------
+    3679
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3679   VALID SKIP(-4)      16     NON-INTERVIEW(-5)    1530
+ 
+Min:              0        Max:              9        Mean:                1.24
+ 
+Lead In: R05363.00[Default]  R05345.00[1:1]
+Default Next Question: R05365.00
+--------------------------------------------------------------------------------
+R05439.40    [CV]                                           Survey Year: 1976
+  PRIMARY VARIABLE
+
+ 
+             HIGHEST GRADE COMPLETED AS OF 76 (REVISED)
+ 
+What is the highest grade of regular school you have completed?
+DATE CHANGED: OCTOBER 31, 1979
+ 
+       3       0 NONE
+       2       1 FIRST GRADE
+       2       2 SECOND GRADE
+       4       3 THIRD GRADE
+       6       4 FOURTH GRADE
+      13       5 FIFTH GRADE
+      22       6 SIXTH GRADE
+      42       7 SEVENTH GRADE
+      90       8 EIGHTH GRADE
+      92       9 NINTH GRADE
+     148      10 TENTH GRADE
+     194      11 ELEVENTH GRADE
+    1213      12 TWELFTH GRADE
+     332      13 FIRST YEAR COLLEGE
+     314      14 SECOND YEAR COLLEGE
+     209      15 THIRD YEAR COLLEGE
+     539      16 FOURTH YEAR COLLEGE
+     182      17 FIFTH YEAR COLLEGE
+     264      18 SIXTH+ YEARS COLLEGE
+  -------
+    3671
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3671   VALID SKIP(-4)      24     NON-INTERVIEW(-5)    1530
+ 
+Lead In: R05439.00[Default]
+Default Next Question: R05439.50
+--------------------------------------------------------------------------------
+R05475.25    [CV]                                           Survey Year: 1978
+  PRIMARY VARIABLE
+
+ 
+             CURRENT RESIDENCE IN SMSA, 78? (REVISED)
+ 
+CURRENT RESIDENCE IN SMSA? PART OF REVISED SERIES
+ 
+    1087       1 CENTRAL CITY OF THE SMSA
+    1370       2 BALANCE (NOT CENTRAL CITY) OF THE SMSA
+    1081       3 NOT IN SMSA
+  -------
+    3538
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3538   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    1687
+ 
+Lead In: R05475.20[Default]
+Default Next Question: R05475.30
+--------------------------------------------------------------------------------
+R05475.30    [CV]                                           Survey Year: 1978
+  PRIMARY VARIABLE
+
+ 
+             REGION OF RESIDENCE IN 78 (REVISED)
+ 
+REGION OF RESIDENCE IN 1978 (REVISED)
+ 
+    1408       1 SOUTH
+    2130       0 NON-SOUTH
+  -------
+    3538
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3538   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    1687
+ 
+Lead In: R05475.25[Default]
+Default Next Question: R05475.35
+--------------------------------------------------------------------------------
+R05481.00    [R1]                                           Survey Year: 1978
+  PRIMARY VARIABLE
+
+ 
+             MARITAL STATUS, 78
+ 
+Marital Status - Transcribe from Household Record Card item 7
+ 
+    2519       1 MARRIED, SPOUSE PRESENT
+      13       2 MARRIED, SPOUSE ABSENT
+       6       3 WIDOWED
+     240       4 DIVORCED
+     136       5 SEPARATED
+     624       6 NEVER MARRIED
+  -------
+    3538
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3538   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    1687
+ 
+Lead In: R05480.00[Default]
+Default Next Question: R05482.00
+--------------------------------------------------------------------------------
+R05498.00    [2B]                                           Survey Year: 1978
+  PRIMARY VARIABLE
+
+ 
+             HIGHEST GRADE COMPLETED BETWEEN 76 & 78
+ 
+What is the highest grade of regular school you have completed?
+ 
+       0       0 NONE
+       0       1 FIRST GRADE
+       0       2 SECOND GRADE
+       0       3 THIRD GRADE
+       0       4 FOURTH GRADE
+       0       5 FIFTH GRADE
+       0       6 SIXTH GRADE
+       0       7 SEVENTH GRADE
+       0       8 EIGHTH GRADE
+       0       9 NINTH GRADE   (Go To R05503.00)
+       3      10 TENTH GRADE   (Go To R05503.00)
+       6      11 ELEVENTH GRADE   (Go To R05503.00)
+      30      12 TWELFTH GRADE   (Go To R05503.00)
+      33      13 FIRST YEAR COLLEGE
+      45      14 SECOND YEAR COLLEGE
+      27      15 THIRD YEAR COLLEGE
+      62      16 FOURTH YEAR COLLEGE
+      26      17 FIFTH YEAR COLLEGE
+      64      18 SIXTH+ YEARS COLLEGE
+  -------
+     296
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>     296   VALID SKIP(-4)    3242     NON-INTERVIEW(-5)    1687
+ 
+Lead In: R05497.00[Default]
+Default Next Question: R05499.00
+--------------------------------------------------------------------------------
+R05527.00    [10G]                                          Survey Year: 1978
+  PRIMARY VARIABLE
+
+ 
+             YEAR STARTED WORKING AT CURRENT/LAST JOB 78
+ 
+When did you start working for (entry in 10a)?
+ 
+41 THRU 78 ACTUAL YEAR
+ 
+     175          51 TO 65: 1951-1965
+      98          66: 1966
+      83          67: 1967
+     129          68: 1968
+     143          69: 1969
+     148          70: 1970
+     163          71: 1971
+     232          72: 1972
+     268          73: 1973
+     259          74: 1974
+     227          75: 1975
+     332          76: 1976
+     447          77: 1977
+     724          78: 1978
+  -------
+    3428
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3428   VALID SKIP(-4)     110     NON-INTERVIEW(-5)    1687
+ 
+Min:             54        Max:             78        Mean:               73.58
+ 
+Lead In: R05526.00[Default]
+Default Next Question: R05528.00
+--------------------------------------------------------------------------------
+R05531.00    [10H]                                          Survey Year: 1978
+  PRIMARY VARIABLE
+
+ 
+             RATE OF PAY AT CURRENT/LAST JOB 78
+ 
+Altogether, how much do (did) you usually earn at this job before deductions?
+ 
+1 THRU 999997 ACTUAL AMOUNT (TWO DECIMAL PLACES IMPLIED)
+-1 REFUSAL
+ 
+      51           1 TO 99
+     218         100 TO 199
+     367         200 TO 299
+     307         300 TO 399
+     193         400 TO 499
+     138         500 TO 599
+     118         600 TO 699
+     138         700 TO 799
+     126         800 TO 899
+      76         900 TO 999
+    1235        1000 TO 999997
+  -------
+    2967
+ 
+Refusal(-1)           59
+Don't Know(-2)         0
+TOTAL =========>    3026   VALID SKIP(-4)     512     NON-INTERVIEW(-5)    1687
+ 
+Min:              5        Max:          50000        Mean:             6224.81
+ 
+Lead In: R05530.00[Default]
+Default Next Question: R05533.00
+--------------------------------------------------------------------------------
+R05550.00    [13B]                                          Survey Year: 1978
+  PRIMARY VARIABLE
+
+ 
+             IS R A MEMBER OF UNION/EMPLOYEE ASSOCIATION ON CURRENT JOB 78?
+ 
+Are you a member of that union or employee association?
+ 
+     870       1 YES
+     175       0 NO
+  -------
+    1045
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    1045   VALID SKIP(-4)    2493     NON-INTERVIEW(-5)    1687
+ 
+Lead In: R05549.00[Default]
+Default Next Question: R05551.00
+--------------------------------------------------------------------------------
+R05624.00    [28A]                                          Survey Year: 1978
+  PRIMARY VARIABLE
+
+ 
+             MARITAL STATUS & BACKGROUND, 78 - YEAR OF PRESENT MARRIAGE
+ 
+What was the date of your present marriage?
+ 
+41 THRU 78 ACTUAL YEAR
+ 
+     369          51 TO 65: 1951-1965
+     107          66: 1966
+     156          67: 1967
+     169          68: 1968
+     188          69: 1969
+     240          70: 1970
+     231          71: 1971
+     212          72: 1972
+     189          73: 1973
+     148          74: 1974
+     150          75: 1975
+     130          76: 1976
+     112          77: 1977
+      99          78: 1978
+  -------
+    2500
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    2500   VALID SKIP(-4)    1038     NON-INTERVIEW(-5)    1687
+ 
+Min:             57        Max:             78        Mean:               70.41
+ 
+Lead In: R05623.00[Default]
+Default Next Question: R05625.00
+--------------------------------------------------------------------------------
+R05628.00    [28C]                                          Survey Year: 1978
+  PRIMARY VARIABLE
+
+ 
+             MARITAL STATUS & BACKGROUND, 78 - YEAR DIVORCED
+ 
+When were you divorced?
+ 
+41 THRU 78 ACTUAL YEAR
+ 
+       1          51 TO 65: 1951-1965
+       2          67: 1967
+       1          68: 1968
+       5          69: 1969
+       8          70: 1970
+       6          71: 1971
+       7          72: 1972
+      31          73: 1973
+      15          74: 1974
+      23          75: 1975
+      27          76: 1976
+      45          77: 1977
+      56          78: 1978
+  -------
+     227
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>     227   VALID SKIP(-4)    3311     NON-INTERVIEW(-5)    1687
+ 
+Min:             65        Max:             78        Mean:               75.26
+ 
+Lead In: R05627.00[Default]
+Default Next Question: R05629.00
+--------------------------------------------------------------------------------
+R05632.00    [29A]                                          Survey Year: 1978
+  PRIMARY VARIABLE
+
+ 
+             # OF DEPENDENTS EXCLUDING WIFE, 78
+ 
+How many persons, not counting yourself (or your wife) are dependent upon you 
+for at least one-half of their support?
+ 
+0 THRU 98 ACTUAL NUMBER
+ 
+    3530           0 TO 8: ACTUAL NUMBER   (Go To R05640.00)
+       2           9: 9 OR MORE
+  -------
+    3532
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3532   VALID SKIP(-4)       6     NON-INTERVIEW(-5)    1687
+ 
+Min:              0        Max:              9        Mean:                1.46
+ 
+Lead In: R05631.00[Default]  R05623.00[6:6]
+Default Next Question: R05633.00
+--------------------------------------------------------------------------------
+R05968.00    [R1]                                           Survey Year: 1980
+  PRIMARY VARIABLE
+
+ 
+             MARITAL STATUS, 80
+ 
+Marital status - Transcribe from Household Record Card item 7
+ 
+    2512       1 MARRIED, SPOUSE PRESENT
+      14       2 MARRIED, SPOUSE ABSENT
+       7       3 WIDOWED
+     276       4 DIVORCED
+     136       5 SEPARATED
+     493       6 NEVER MARRIED
+  -------
+    3438
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3438   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    1787
+ 
+Lead In: R05967.10[Default]
+Default Next Question: R05970.00
+--------------------------------------------------------------------------------
+R06010.00    [5H]                                           Survey Year: 1980
+  PRIMARY VARIABLE
+
+ 
+             YEAR STARTED WORKING AT CURRENT/LAST JOB 80
+ 
+When did you start working for (Entry in 5a)?
+ 
+51 THRU 80 ACTUAL YEAR
+ 
+     176          51 TO 65: 1951-1965
+      91          66: 1966
+      81          67: 1967
+     112          68: 1968
+     132          69: 1969
+     161          70: 1970
+     126          71: 1971
+     213          72: 1972
+     199          73: 1973
+     207          74: 1974
+     157          75: 1975
+     213          76: 1976
+     243          77: 1977
+     311          78: 1978
+     422          79: 1979
+     507          80: 1980
+  -------
+    3351
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3351   VALID SKIP(-4)      87     NON-INTERVIEW(-5)    1787
+ 
+Min:             55        Max:             80        Mean:               74.46
+ 
+Lead In: R06009.00[Default]  R05997.00[0:0] R06008.00[0:0]
+Default Next Question: R06011.00
+--------------------------------------------------------------------------------
+R06015.00    [6]                                            Survey Year: 1980
+  PRIMARY VARIABLE
+
+ 
+             RATE OF PAY AT CURRENT/LAST JOB 80
+ 
+Altogether, how much do (did) you usually earn at this job before deductions?
+ 
+1 THRU 999997 ACTUAL DOLLARS (TWO DECIMAL PLACES IMPLIED IF HOURLY)
+-1 REFUSED
+ 
+      41           1 TO 99
+     122         100 TO 199
+     266         200 TO 299
+     272         300 TO 399
+     220         400 TO 499
+     170         500 TO 599
+     113         600 TO 699
+     110         700 TO 799
+      87         800 TO 899
+     102         900 TO 999
+    1316        1000 TO 999997
+  -------
+    2819
+ 
+Refusal(-1)           81
+Don't Know(-2)         0
+TOTAL =========>    2900   VALID SKIP(-4)     538     NON-INTERVIEW(-5)    1787
+ 
+Min:              5        Max:          50000        Mean:             7609.79
+ 
+Lead In: R06014.00[Default]
+Default Next Question: R06017.00
+--------------------------------------------------------------------------------
+R06021.00    [8B]                                           Survey Year: 1980
+  PRIMARY VARIABLE
+
+ 
+             IS R A MEMBER OF UNION/EMPLOYEE ASSOCIATION ON CURRENT/LAST JOB 80?
+ 
+Are (Were) you a member of that union or employee association?
+ 
+     863       1 YES
+     149       0 NO
+  -------
+    1012
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    1012   VALID SKIP(-4)    2426     NON-INTERVIEW(-5)    1787
+ 
+Lead In: R06020.00[Default]
+Default Next Question: R06022.00
+--------------------------------------------------------------------------------
+R06102.00    [20A]                                          Survey Year: 1980
+  PRIMARY VARIABLE
+
+ 
+             MARITAL STATUS & BACKGROUND, 80 - YEAR OF PRESENT MARRIAGE
+ 
+What was the date of your present marriage?
+ 
+51 THRU 80 YEAR
+ 
+     345          51 TO 65: 1951-1965
+      97          66: 1966
+     156          67: 1967
+     160          68: 1968
+     187          69: 1969
+     209          70: 1970
+     211          71: 1971
+     194          72: 1972
+     173          73: 1973
+     135          74: 1974
+     134          75: 1975
+     112          76: 1976
+     109          77: 1977
+      97          78: 1978
+     100          79: 1979
+      79          80: 1980
+  -------
+    2498
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    2498   VALID SKIP(-4)     940     NON-INTERVIEW(-5)    1787
+ 
+Min:             51        Max:             80        Mean:               71.02
+ 
+Lead In: R06101.00[Default]
+Default Next Question: R06103.00
+--------------------------------------------------------------------------------
+R06106.00    [20C]                                          Survey Year: 1980
+  PRIMARY VARIABLE
+
+ 
+             MARITAL STATUS & BACKGROUND, 80 - YEAR DIVORCED
+ 
+When were you divorced?
+ 
+51 THRU 80 YEAR
+ 
+       1          67: 1967
+       3          68: 1968
+       1          69: 1969
+       2          70: 1970
+       9          71: 1971
+       7          72: 1972
+       9          73: 1973
+      24          74: 1974
+      21          75: 1975
+      21          76: 1976
+      35          77: 1977
+      38          78: 1978
+      38          79: 1979
+      50          80: 1980
+  -------
+     259
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>     259   VALID SKIP(-4)    3179     NON-INTERVIEW(-5)    1787
+ 
+Min:             67        Max:             80        Mean:               76.79
+ 
+Lead In: R06101.00[4:4]
+Default Next Question: R06107.00
+--------------------------------------------------------------------------------
+R06110.00    [20E]                                          Survey Year: 1980
+  PRIMARY VARIABLE
+
+ 
+             # OF DEPENDENTS EXCLUDING WIFE, 80
+ 
+How many persons, not counting yourself (or your wife), are dependent upon you 
+for at least one-half of their support?
+ 
+0 THRU 98 PERSONS
+ 
+    3426           0 TO 8: ACTUAL NUMBER
+       1           9: 9 OR MORE
+  -------
+    3427
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3427   VALID SKIP(-4)      11     NON-INTERVIEW(-5)    1787
+ 
+Min:              0        Max:              9        Mean:                1.63
+ 
+Lead In: R06103.00[Default] R06105.00[Default] R06107.00[Default] 
+         R06109.00[Default]  R06101.00[6:6]
+Default Next Question: R06111.00
+--------------------------------------------------------------------------------
+R06386.00    [34B]                                          Survey Year: 1980
+  PRIMARY VARIABLE
+
+ 
+             HIGHEST GRADE COMPLETED BETWEEN 78 & 80
+ 
+What is the highest grade or regular school you have completed?
+ 
+       0       0 NONE
+       0       1 FIRST GRADE
+       0       2 SECOND GRADE
+       0       3 THIRD GRADE
+       0       4 FOURTH GRADE
+       0       5 FIFTH GRADE
+       0       6 SIXTH GRADE
+       0       7 SEVENTH GRADE
+       0       8 EIGHTH GRADE
+       0       9 NINTH GRADE   (Go To R06392.00)
+       0      10 TENTH GRADE   (Go To R06392.00)
+       1      11 ELEVENTH GRADE   (Go To R06392.00)
+      32      12 TWELFTH GRADE   (Go To R06392.00)
+      29      13 FIRST YEAR COLLEGE
+      33      14 SECOND YEAR COLLEGE
+      13      15 THIRD YEAR COLLEGE
+      57      16 FOURTH YEAR COLLEGE
+      26      17 FIFTH YEAR COLLEGE
+      48      18 SIXTH+ YEARS COLLEGE
+  -------
+     239
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>     239   VALID SKIP(-4)    3199     NON-INTERVIEW(-5)    1787
+ 
+Lead In: R06385.00[Default]
+Default Next Question: R06388.00
+--------------------------------------------------------------------------------
+R06403.00    [CV]                                           Survey Year: 1980
+  PRIMARY VARIABLE
+
+ 
+             SMSA STATUS IN 80 (REVISED)
+ 
+SMSA STATUS IN 80 (REVISED)
+DATE CHANGED: NOVEMBER, 1983
+ 
+IF R(1.)=2098 THEN R(6403.)=3;
+IF R(1.)=4051 THEN R(6403.)=3;
+ 
+    1019       1 CENTRAL CITY OF THE SMSA
+    1340       2 BALANCE (NOT CENTRAL CITY) OF THE SMSA
+    1079       3 NOT IN SMSA
+  -------
+    3438
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3438   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    1787
+ 
+Lead In: R06402.00[Default]
+Default Next Question: R06404.00
+--------------------------------------------------------------------------------
+R06404.00    [CV]                                           Survey Year: 1980
+  PRIMARY VARIABLE
+
+ 
+             REGION OF RESIDENCE IN 80 (REVISED)
+ 
+CREATED VARIABLE - REGION OF RESIDENCE IN 80 FROM THE REVISED SERIES
+ 
+    1383       1 SOUTH
+    2055       0 NON-SOUTH
+  -------
+    3438
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3438   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    1787
+ 
+Lead In: R06403.00[Default]
+Default Next Question: R06405.00
+--------------------------------------------------------------------------------
+R06920.00    [18A]                                          Survey Year: 1981
+  PRIMARY VARIABLE
+
+ 
+             RATE OF PAY AT CURRENT/LAST JOB 81
+ 
+Altogether, how much (do/did) you usually earn at this job before deductions?
+ 
+1 THRU 999997 ACTUAL AMOUNT (TWO DECIMAL PLACES IMPLIED IF HOURLY)
+-1 REFUSAL
+ 
+      29           1 TO 99
+     109         100 TO 199
+     196         200 TO 299
+     219         300 TO 399
+     195         400 TO 499
+     140         500 TO 599
+     114         600 TO 699
+      82         700 TO 799
+      90         800 TO 899
+      70         900 TO 999
+    1518        1000 TO 999997
+  -------
+    2762
+ 
+Refusal(-1)           52
+Don't Know(-2)         0
+TOTAL =========>    2814   VALID SKIP(-4)     584     NON-INTERVIEW(-5)    1827
+ 
+Min:             10        Max:          50001        Mean:            10735.59
+ 
+Lead In: R06919.00[Default]
+Default Next Question: R06922.00
+--------------------------------------------------------------------------------
+R06934.00    [18H]                                          Survey Year: 1981
+  PRIMARY VARIABLE
+
+ 
+             IS R A MEMBER OF UNION/EMPLOYEE ASSOCIATION ON CURRENT/LAST JOB 81?
+ 
+(Are/were) you a member of that union or employee association?
+ 
+     766       1 YES
+      99       0 NO
+  -------
+     865
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>     865   VALID SKIP(-4)    2533     NON-INTERVIEW(-5)    1827
+ 
+Lead In: R06933.00[Default]
+Default Next Question: R06935.00
+--------------------------------------------------------------------------------
+R07676.00    [55A]                                          Survey Year: 1981
+  PRIMARY VARIABLE
+
+ 
+             # OF DEPENDENTS EXCLUDING WIFE/PARTNER, 81
+ 
+How many persons not counting yourself (or your wife/partner) are dependent upon
+you for at least one-half of their support?
+ 
+0 NONE
+1 THRU 50 ACTUAL NUMBER OF DEPENDENTS
+ 
+    3389           0 TO 8: ACTUAL NUMBER   (Go To R07686.00)
+       2           9: 9 OR MORE
+  -------
+    3391
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3391   VALID SKIP(-4)       7     NON-INTERVIEW(-5)    1827
+ 
+Min:              0        Max:              9        Mean:                 1.7
+ 
+Lead In: R07675.70[Default]  R07665.00[0:0] R07674.00[1:1]
+Default Next Question: R07677.00

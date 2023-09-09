@@ -1,0 +1,21 @@
+pcgive 700
+data Fulton.bn7
+;Fulton Fishmarket
+;From Katy Graddy 7 Feb 03
+;used in Angrist, Graddy, Imbens, RES (2000) 
+>Monday          1  1  111  1  1 32       Fulton 03-03-2003 12:56:30
+;Monday
+>Tuesday         1  1  111  1  1 952       Fulton 03-03-2003 12:56:30
+;Tuesday
+>Wednesday       1  1  111  1  1 1872       Fulton 03-03-2003 12:56:30
+>Thursday        1  1  111  1  1 2792       Fulton 03-03-2003 12:56:30
+>Date            1  1  111  1  1 3712       Fulton 03-03-2003 12:56:30
+>Stormy          1  1  111  1  1 4632       Fulton 03-03-2003 12:56:30
+>Mixed           1  1  111  1  1 5552       Fulton 03-03-2003 12:56:30
+>LogPrice        1  1  111  1  1 6472       Fulton 03-03-2003 12:56:30
+>LogQuantity     1  1  111  1  1 7392       Fulton 03-03-2003 12:56:30
+>Rainy           1  1  111  1  1 8312       Fulton 03-03-2003 12:56:30
+>Cold            1  1  111  1  1 9232       Fulton 03-03-2003 12:56:30
+>Windspeed       1  1  111  1  1 10152       Fulton 03-03-2003 12:56:30
+>Windspeed2      1  1  111  1  1 11072       Fulton 03-03-2003 12:56:30
+;square of windspeed

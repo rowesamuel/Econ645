@@ -1,0 +1,138 @@
+R00001.00    [PG1]                                          Survey Year: 1966
+  PRIMARY VARIABLE
+
+ 
+             IDENTIFICATION CODE, 66
+ 
+IDENTIFICATION CODE  0001 THRU 5225 RESPONDENT'S RECORD NUMBER
+DESCRIPTION: THIS NUMBER WAS ASSIGNED ACCORDING TO THE RECORD NUMBER OF EACH 
+RESPONDENT ON THE TAPE. THE FIRST  RESPONDENT WAS ASSIGNED THE SERIAL NUMBER OF 
+0001: THE SECOND WAS ASSIGNED 0002, ETC.
+ 
+    5225           1 TO 5225: IDENTIFICATION CODE - YM COHORT
+  -------
+    5225
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    5225   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+Min:              1        Max:           5225        Mean:                2613
+ 
+Lead In: None.
+Default Next Question: R00001.01
+--------------------------------------------------------------------------------
+R00023.00    [PG1]                                          Survey Year: 1966
+  PRIMARY VARIABLE
+
+ 
+             RACE, 66
+ 
+RACE
+UNIVERSE INFORMATION:
+ALL RESPONDENTS
+ 
+    3734       1 WHITE
+    1438       2 BLACK
+      53       3 OTHER
+  -------
+    5225
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    5225   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+Lead In: R00022.03[Default]
+Default Next Question: R00024.00
+--------------------------------------------------------------------------------
+R03852.00    [CV]                                           Survey Year: 1971
+  PRIMARY VARIABLE
+
+ 
+             EMPLOYMENT STATUS RECODE, 71
+ 
+EMPLOYMENT STATUS RECODE
+EMPLOYED
+         UNEMPLOYED
+ 
+  SINCE ALL RESPONDENTS SHOULD HAVE AN ENTRY FOR THIS VARIABLE,
+  THE CENTER USES ESR = NA TO IDENTIFY NON-INTERVIEWEES.
+ 
+    3239       1 IN LABOR FORCE: WORKING
+     103       2 IN LABOR FORCE: WITH JOB, NOT AT WORK
+     257       3 IN LABOR FORCE: UNEMPLOYED
+     253       4 OUT OF LABOR FORCE: GOING TO SCHOOL
+       0       5 OUT OF LABOR FORCE: CODE 5 IS NOT USED
+      23       6 OUT OF LABOR FORCE: UNABLE TO WORK
+       0       7 OUT OF LABOR FORCE: CODE 7 IS NOT USED
+     112       8 OUT OF LABOR FORCE: OTHER
+       0       0 OUT OF LABOR FORCE: NEVER WORKED
+  -------
+    3987
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3987   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    1238
+ 
+Lead In: R03851.50[Default]
+Default Next Question: R03852.60
+--------------------------------------------------------------------------------
+R05439.50    [CV]                                           Survey Year: 1976
+  PRIMARY VARIABLE
+
+ 
+             EMPLOYMENT STATUS RECODE, 76
+ 
+Labor force status in 1975
+EMPLOYED
+         UNEMPLOYED
+ 
+    3228       1 IN LABOR FORCE: WORKING
+     117       2 IN LABOR FORCE: WITH JOB, NOT AT WORK
+     180       3 IN LABOR FORCE: UNEMPLOYED
+      67       4 OUT OF LABOR FORCE: GOING TO SCHOOL
+       0       5 OUT OF LABOR FORCE: CODE 5 IS NOT USED
+      37       6 OUT OF LABOR FORCE: UNABLE TO WORK
+       0       7 OUT OF LABOR FORCE: CODE 7 IS NOT USED
+      66       8 OUT OF LABOR FORCE: OTHER
+       0       0 OUT OF LABOR FORCE: NEVER WORKED
+  -------
+    3695
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3695   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    1530
+ 
+Lead In: R05439.40[Default]
+Default Next Question: R05439.60
+--------------------------------------------------------------------------------
+R06821.00    [CV]                                           Survey Year: 1981
+  PRIMARY VARIABLE
+
+ 
+             EMPLOYMENT STATUS RECODE, 81
+ 
+EMPLOYMENT STATUS RECODE
+EMPLOYED
+         UNEMPLOYED
+             CODE 5 IS NOT USED HERE
+             CODE 7 NOT USED HERE
+ 
+    3012       1 IN LABOR FORCE: WORKING
+     124       2 IN LABOR FORCE: WITH JOB, NOT AT WORK
+     156       3 IN LABOR FORCE: UNEMPLOYED
+      21       4 OUT OF LABOR FORCE: GOING TO SCHOOL
+       0       5 OUT OF LABOR FORCE: CODE 5 IS NOT USED
+      37       6 OUT OF LABOR FORCE: UNABLE TO WORK
+       0       7 OUT OF LABOR FORCE: CODE 7 IS NOT USED
+      48       8 OUT OF LABOR FORCE: OTHER
+       0       0 OUT OF LABOR FORCE: NEVER WORKED
+  -------
+    3398
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3398   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    1827
+ 
+Lead In: R06820.00[Default]
+Default Next Question: R06822.00

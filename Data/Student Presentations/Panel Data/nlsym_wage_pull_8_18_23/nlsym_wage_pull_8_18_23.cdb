@@ -1,0 +1,297 @@
+R00001.00    [PG1]                                          Survey Year: 1966
+  PRIMARY VARIABLE
+
+ 
+             IDENTIFICATION CODE, 66
+ 
+IDENTIFICATION CODE  0001 THRU 5225 RESPONDENT'S RECORD NUMBER
+DESCRIPTION: THIS NUMBER WAS ASSIGNED ACCORDING TO THE RECORD NUMBER OF EACH 
+RESPONDENT ON THE TAPE. THE FIRST  RESPONDENT WAS ASSIGNED THE SERIAL NUMBER OF 
+0001: THE SECOND WAS ASSIGNED 0002, ETC.
+ 
+    5225           1 TO 5225: IDENTIFICATION CODE - YM COHORT
+  -------
+    5225
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    5225   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+Min:              1        Max:           5225        Mean:                2613
+ 
+Lead In: None.
+Default Next Question: R00001.01
+--------------------------------------------------------------------------------
+R00023.00    [PG1]                                          Survey Year: 1966
+  PRIMARY VARIABLE
+
+ 
+             RACE, 66
+ 
+RACE
+UNIVERSE INFORMATION:
+ALL RESPONDENTS
+ 
+    3734       1 WHITE
+    1438       2 BLACK
+      53       3 OTHER
+  -------
+    5225
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    5225   VALID SKIP(-4)       0     NON-INTERVIEW(-5)       0
+ 
+Lead In: R00022.03[Default]
+Default Next Question: R00024.00
+--------------------------------------------------------------------------------
+R03655.00    [94AR]                                         Survey Year: 1971
+  PRIMARY VARIABLE
+
+ 
+             INCOME FROM WAGES & SALARY IN PAST YEAR, 71
+ 
+How much did you (and your wife) receive from wages, salary, commissions, or 
+tips from all jobs, before deductions for taxes or anything else?
+ 
+0 NONE
+1 THRU 999999 ACTUAL DOLLAR AMOUNT
+ 
+     265           0
+     357           1 TO 999
+     357        1000 TO 1999
+     310        2000 TO 2999
+     338        3000 TO 3999
+     325        4000 TO 4999
+     301        5000 TO 5999
+     329        6000 TO 6999
+     312        7000 TO 7999
+     259        8000 TO 8999
+     188        9000 TO 9999
+     488       10000 TO 14999
+      68       15000 TO 19999
+      13       20000 TO 24999
+       7       25000 TO 49999
+       1       50000 TO 999999
+  -------
+    3918
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3918   VALID SKIP(-4)      69     NON-INTERVIEW(-5)    1238
+ 
+Min:              0        Max:          50000        Mean:              5332.3
+ 
+Lead In: R03654.00[Default]
+Default Next Question: R03656.00
+--------------------------------------------------------------------------------
+R03852.00    [CV]                                           Survey Year: 1971
+  PRIMARY VARIABLE
+
+ 
+             EMPLOYMENT STATUS RECODE, 71
+ 
+EMPLOYMENT STATUS RECODE
+EMPLOYED
+         UNEMPLOYED
+ 
+  SINCE ALL RESPONDENTS SHOULD HAVE AN ENTRY FOR THIS VARIABLE,
+  THE CENTER USES ESR = NA TO IDENTIFY NON-INTERVIEWEES.
+ 
+    3239       1 IN LABOR FORCE: WORKING
+     103       2 IN LABOR FORCE: WITH JOB, NOT AT WORK
+     257       3 IN LABOR FORCE: UNEMPLOYED
+     253       4 OUT OF LABOR FORCE: GOING TO SCHOOL
+       0       5 OUT OF LABOR FORCE: CODE 5 IS NOT USED
+      23       6 OUT OF LABOR FORCE: UNABLE TO WORK
+       0       7 OUT OF LABOR FORCE: CODE 7 IS NOT USED
+     112       8 OUT OF LABOR FORCE: OTHER
+       0       0 OUT OF LABOR FORCE: NEVER WORKED
+  -------
+    3987
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3987   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    1238
+ 
+Lead In: R03851.50[Default]
+Default Next Question: R03852.60
+--------------------------------------------------------------------------------
+R05303.00    [75A]                                          Survey Year: 1976
+  PRIMARY VARIABLE
+
+ 
+             INCOME FROM WAGES & SALARY IN PAST YEAR, 76
+ 
+How much did you (or your wife) receive from wages, salary, commissions, or tips
+from all jobs, before deductions for taxes or anything else?
+ 
+000000 THRU 50000 ACTUAL DOLLAR AMOUNT
+ 
+     319           0
+      88           1 TO 999
+     106        1000 TO 1999
+      80        2000 TO 2999
+     112        3000 TO 3999
+     127        4000 TO 4999
+     147        5000 TO 5999
+     160        6000 TO 6999
+     198        7000 TO 7999
+     202        8000 TO 8999
+     181        9000 TO 9999
+    1028       10000 TO 14999
+     571       15000 TO 19999
+     176       20000 TO 24999
+      99       25000 TO 49999
+      13       50000 TO 999999
+  -------
+    3607
+ 
+Refusal(-1)           53
+Don't Know(-2)         0
+TOTAL =========>    3660   VALID SKIP(-4)      35     NON-INTERVIEW(-5)    1530
+ 
+Min:              0        Max:          50000        Mean:            10232.54
+ 
+Lead In: R05302.00[Default]
+Default Next Question: R05304.00
+--------------------------------------------------------------------------------
+R05439.50    [CV]                                           Survey Year: 1976
+  PRIMARY VARIABLE
+
+ 
+             EMPLOYMENT STATUS RECODE, 76
+ 
+Labor force status in 1975
+EMPLOYED
+         UNEMPLOYED
+ 
+    3228       1 IN LABOR FORCE: WORKING
+     117       2 IN LABOR FORCE: WITH JOB, NOT AT WORK
+     180       3 IN LABOR FORCE: UNEMPLOYED
+      67       4 OUT OF LABOR FORCE: GOING TO SCHOOL
+       0       5 OUT OF LABOR FORCE: CODE 5 IS NOT USED
+      37       6 OUT OF LABOR FORCE: UNABLE TO WORK
+       0       7 OUT OF LABOR FORCE: CODE 7 IS NOT USED
+      66       8 OUT OF LABOR FORCE: OTHER
+       0       0 OUT OF LABOR FORCE: NEVER WORKED
+  -------
+    3695
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3695   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    1530
+ 
+Lead In: R05439.40[Default]
+Default Next Question: R05439.60
+--------------------------------------------------------------------------------
+R05877.00    [32]                                           Survey Year: 1978
+  PRIMARY VARIABLE
+
+ 
+             INCOME FROM WAGES & SALARY IN PAST YEAR, 78
+ 
+How much did you receive from wages, salary, commissions, or tips from all jobs,
+before deductions for taxes or anything else?
+ 
+0 NONE
+1 THRU 50000 ACTUAL DOLLAR AMOUNT
+ 
+     369           0
+      33           1 TO 999
+      39        1000 TO 1999
+      48        2000 TO 2999
+      53        3000 TO 3999
+      69        4000 TO 4999
+      90        5000 TO 5999
+      85        6000 TO 6999
+     117        7000 TO 7999
+     137        8000 TO 8999
+     135        9000 TO 9999
+     859       10000 TO 14999
+     726       15000 TO 19999
+     374       20000 TO 24999
+     264       25000 TO 49999
+      21       50000 TO 999999
+  -------
+    3419
+ 
+Refusal(-1)           71
+Don't Know(-2)         0
+TOTAL =========>    3490   VALID SKIP(-4)      48     NON-INTERVIEW(-5)    1687
+ 
+Min:              0        Max:          50000        Mean:            13011.84
+ 
+Lead In: R05876.00[Default]
+Default Next Question: R05878.00
+--------------------------------------------------------------------------------
+R06355.00    [23]                                           Survey Year: 1980
+  PRIMARY VARIABLE
+
+ 
+             INCOME FROM WAGES & SALARY IN PAST YEAR, 80
+ 
+How much did you receive from wages, salary, commissions, or tips from all jobs,
+before deductions for taxes or anything else?
+ 
+0 NONE
+1 THRU 50000 DOLLARS
+ 
+     414           0
+      31           1 TO 999
+      26        1000 TO 1999
+      35        2000 TO 2999
+      46        3000 TO 3999
+      31        4000 TO 4999
+      56        5000 TO 5999
+      78        6000 TO 6999
+      70        7000 TO 7999
+      95        8000 TO 8999
+      81        9000 TO 9999
+     606       10000 TO 14999
+     619       15000 TO 19999
+     497       20000 TO 24999
+     541       25000 TO 49999
+      59       50000 TO 999999
+  -------
+    3285
+ 
+Refusal(-1)           92
+Don't Know(-2)         0
+TOTAL =========>    3377   VALID SKIP(-4)      61     NON-INTERVIEW(-5)    1787
+ 
+Min:              0        Max:          50000        Mean:            15633.01
+ 
+Lead In: R06354.00[Default]
+Default Next Question: R06356.00
+--------------------------------------------------------------------------------
+R06821.00    [CV]                                           Survey Year: 1981
+  PRIMARY VARIABLE
+
+ 
+             EMPLOYMENT STATUS RECODE, 81
+ 
+EMPLOYMENT STATUS RECODE
+EMPLOYED
+         UNEMPLOYED
+             CODE 5 IS NOT USED HERE
+             CODE 7 NOT USED HERE
+ 
+    3012       1 IN LABOR FORCE: WORKING
+     124       2 IN LABOR FORCE: WITH JOB, NOT AT WORK
+     156       3 IN LABOR FORCE: UNEMPLOYED
+      21       4 OUT OF LABOR FORCE: GOING TO SCHOOL
+       0       5 OUT OF LABOR FORCE: CODE 5 IS NOT USED
+      37       6 OUT OF LABOR FORCE: UNABLE TO WORK
+       0       7 OUT OF LABOR FORCE: CODE 7 IS NOT USED
+      48       8 OUT OF LABOR FORCE: OTHER
+       0       0 OUT OF LABOR FORCE: NEVER WORKED
+  -------
+    3398
+ 
+Refusal(-1)            0
+Don't Know(-2)         0
+TOTAL =========>    3398   VALID SKIP(-4)       0     NON-INTERVIEW(-5)    1827
+ 
+Lead In: R06820.00[Default]
+Default Next Question: R06822.00

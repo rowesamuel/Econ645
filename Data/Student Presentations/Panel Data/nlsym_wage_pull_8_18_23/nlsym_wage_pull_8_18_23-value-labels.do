@@ -1,0 +1,81 @@
+*Convert NLS Data
+*Samuel Rowe
+*ECON 645
+*August 16, 2023
+
+clear
+set more off
+
+*Set Working Directory
+cd "/Users/Sam/Desktop/Econ 645/Student Presentations/Panel Data/nlsym_wage_pull_8_18_23"
+import delimited using "nlsym_wage_pull_8_18_23.csv"
+
+
+*Variables names to upper
+rename *, upper
+
+label define vlR0002300 1 "WHITE"  2 "BLACK"  3 "OTHER" 
+label values R0002300 vlR0002300
+
+label define vlR0365500 -999999 "-999999 TO -6"  0 "0"  1 "1 TO 999"  1000 "1000 TO 1999"  2000 "2000 TO 2999"  3000 "3000 TO 3999"  4000 "4000 TO 4999"  5000 "5000 TO 5999"  6000 "6000 TO 6999"  7000 "7000 TO 7999"  8000 "8000 TO 8999"  9000 "9000 TO 9999"  10000 "10000 TO 14999"  15000 "15000 TO 19999"  20000 "20000 TO 24999"  25000 "25000 TO 49999"  50000 "50000 TO 999999" 
+label values R0365500 vlR0365500
+
+label define vlR0385200 1 "IN LABOR FORCE: WORKING"  2 "IN LABOR FORCE: WITH JOB, NOT AT WORK"  3 "IN LABOR FORCE: UNEMPLOYED"  4 "OUT OF LABOR FORCE: GOING TO SCHOOL"  5 "OUT OF LABOR FORCE: CODE 5 IS NOT USED"  6 "OUT OF LABOR FORCE: UNABLE TO WORK"  7 "OUT OF LABOR FORCE: CODE 7 IS NOT USED"  8 "OUT OF LABOR FORCE: OTHER"  0 "OUT OF LABOR FORCE: NEVER WORKED" 
+label values R0385200 vlR0385200
+
+label define vlR0530300 -999999 "-999999 TO -6"  0 "0"  1 "1 TO 999"  1000 "1000 TO 1999"  2000 "2000 TO 2999"  3000 "3000 TO 3999"  4000 "4000 TO 4999"  5000 "5000 TO 5999"  6000 "6000 TO 6999"  7000 "7000 TO 7999"  8000 "8000 TO 8999"  9000 "9000 TO 9999"  10000 "10000 TO 14999"  15000 "15000 TO 19999"  20000 "20000 TO 24999"  25000 "25000 TO 49999"  50000 "50000 TO 999999" 
+label values R0530300 vlR0530300
+
+label define vlR0543950 1 "IN LABOR FORCE: WORKING"  2 "IN LABOR FORCE: WITH JOB, NOT AT WORK"  3 "IN LABOR FORCE: UNEMPLOYED"  4 "OUT OF LABOR FORCE: GOING TO SCHOOL"  5 "OUT OF LABOR FORCE: CODE 5 IS NOT USED"  6 "OUT OF LABOR FORCE: UNABLE TO WORK"  7 "OUT OF LABOR FORCE: CODE 7 IS NOT USED"  8 "OUT OF LABOR FORCE: OTHER"  0 "OUT OF LABOR FORCE: NEVER WORKED" 
+label values R0543950 vlR0543950
+
+label define vlR0587700 -999999 "-999999 TO -6"  0 "0"  1 "1 TO 999"  1000 "1000 TO 1999"  2000 "2000 TO 2999"  3000 "3000 TO 3999"  4000 "4000 TO 4999"  5000 "5000 TO 5999"  6000 "6000 TO 6999"  7000 "7000 TO 7999"  8000 "8000 TO 8999"  9000 "9000 TO 9999"  10000 "10000 TO 14999"  15000 "15000 TO 19999"  20000 "20000 TO 24999"  25000 "25000 TO 49999"  50000 "50000 TO 999999" 
+label values R0587700 vlR0587700
+
+label define vlR0635500 -999999 "-999999 TO -6"  0 "0"  1 "1 TO 999"  1000 "1000 TO 1999"  2000 "2000 TO 2999"  3000 "3000 TO 3999"  4000 "4000 TO 4999"  5000 "5000 TO 5999"  6000 "6000 TO 6999"  7000 "7000 TO 7999"  8000 "8000 TO 8999"  9000 "9000 TO 9999"  10000 "10000 TO 14999"  15000 "15000 TO 19999"  20000 "20000 TO 24999"  25000 "25000 TO 49999"  50000 "50000 TO 999999" 
+label values R0635500 vlR0635500
+
+label define vlR0682100 1 "IN LABOR FORCE: WORKING"  2 "IN LABOR FORCE: WITH JOB, NOT AT WORK"  3 "IN LABOR FORCE: UNEMPLOYED"  4 "OUT OF LABOR FORCE: GOING TO SCHOOL"  5 "OUT OF LABOR FORCE: CODE 5 IS NOT USED"  6 "OUT OF LABOR FORCE: UNABLE TO WORK"  7 "OUT OF LABOR FORCE: CODE 7 IS NOT USED"  8 "OUT OF LABOR FORCE: OTHER"  0 "OUT OF LABOR FORCE: NEVER WORKED" 
+label values R0682100 vlR0682100
+
+label variable R0000100 "ID"
+label variable R0002300 "race 1966"
+label variable R0365500 "Wages 1971"
+label variable R0385200 "Employment Status 1971"
+label variable R0530300 "Wages 1976"
+label variable R0543950 "Employment Status 1976"
+label variable R0587700 "Wages 1978"
+label variable R0635500 "Wages 1980"
+label variable R0682100 "Employment Status 1981"
+
+rename R0000100 id
+rename R0002300 race66
+rename (R0365500 R0530300 R0587700 R0635500) (income71 income76 income78 income80)
+rename (R0385200 R0543950 R0682100) (empstat71 empstat76 empstat81)
+
+save "nlsym_wages.dta", replace
+
+/* Crosswalk for Reference number & Question name
+ * Uncomment and edit this RENAME statement to rename variables for ease of use.
+ * This command does not guarantee uniqueness
+ */
+  /* *start* */
+/*
+  rename R0000100 R0000100_1966 
+  rename R0002300 R0002300_1966 
+  rename R0365500 R0365500_1971 
+  rename R0385200 R0385200_1971 
+  rename R0530300 R0530300_1976 
+  rename R0543950 R0543950_1976 
+  rename R0587700 R0587700_1978 
+  rename R0635500 R0635500_1980 
+  rename R0682100 R0682100_1981 
+
+*/
+  /* *end* */  
+/* To convert variable names to lower case use the TOLOWER command 
+ *      (type findit tolower and follow the links to install).
+ * TOLOWER VARLIST will change listed variables to lower case; 
+ *  TOLOWER without a specified variable list will convert all variables in the dataset to lower case
+ */
+/* tolower */

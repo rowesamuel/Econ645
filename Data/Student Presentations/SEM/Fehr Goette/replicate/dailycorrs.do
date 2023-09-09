@@ -1,0 +1,1 @@
+use dailycorrs /* Evidence that revenues at Veloblitz and Flash are highly correlated */ sureg (logv ) (logf ) , corr  sureg (logv tag_2 - tag_5) (logf tag_2 - tag_5) , corr 
