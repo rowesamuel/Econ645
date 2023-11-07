@@ -33,7 +33,7 @@ eststo Probit: probit inlf nwifeinc educ exper expersq kidslt6 kidsge6
 
 esttab Logit Probit, mtitle
 
-*Marginal Effects
+*Average Marginal Effects (AME)
 est clear
 *LPM
 quietly reg inlf nwifeinc educ exper expersq age kidslt6 kidsge6
@@ -47,17 +47,79 @@ eststo Probit: margins, dydx(*)
 
 esttab LPM Logit Probit, mtitle 
 
+*Marginal Effects at the Average (MEA)
+est clear
+*LPM
+quietly reg inlf nwifeinc educ exper expersq age kidslt6 kidsge6
+eststo LPM: margins, dydx(*) atmeans
+*Logit
+quietly logit inlf nwifeinc educ exper expersq age kidslt6 kidsge6
+eststo Logit: margins, dydx(*) atmeans
+*Probit
+quietly probit inlf nwifeinc educ exper expersq age kidslt6 kidsge6
+eststo Probit: margins, dydx(*) atmeans
+
+esttab LPM Logit Probit, mtitle 
+
+
+*Graph
+*LPM
+est clear
+quietly reg inlf nwifeinc educ exper expersq age kidslt6 kidsge6
+eststo lpm: margins, at(educ=(0(2)20)) post
+marginsplot, yline(0)
+
+*Logit
+quietly logit inlf nwifeinc educ exper expersq kidslt6 kidsge6
+eststo logit1: margins, at(educ=(0(2)20)) post
+marginsplot, yline(0)
+
+*Probit
+quietly probit inlf nwifeinc educ exper expersq age kidslt6 kidsge6
+eststo probit1: margins, at(educ=(0(2)20)) post
+marginsplot, yline(0)
+
+coefplot lpm logit1, at recast(line) ciopts(recast(rline) lpattern(dash))
+coefplot lpm probit1, at recast(line) ciopts(recast(rline) lpattern(dash))
+coefplot logit1 probit1, at recast(line) ciopts(recast(rline) lpattern(dash))
+
+*Marginal Effects
+quietly reg inlf nwifeinc educ exper expersq age kidslt6 kidsge6
+margins, dydx(kidslt6) at(educ=(0(2)20))
+marginsplot, yline(0)
+
+*Logit
+quietly logit inlf nwifeinc educ exper expersq kidslt6 kidsge6
+test kidslt6 kidsge6
+
+margins, dydx(kidslt6) at(educ=(0(2)20))
+marginsplot, yline(0)
+
+*Probit
+quietly probit inlf nwifeinc educ exper expersq age kidslt6 kidsge6
+margins, dydx(kidslt6) at(educ=(0(2)20))
+marginsplot, yline(0)
 
 ********
 *Married Women's Annual Labor Supply
 ********
+*Lesson: 1) Tobit and OLS have the same sign; 2) Tobit and OLS magnitudes are
+*not directly comparable. We need an adjustment factor
+
+*We have data on married women' annual labor supply with hours of work for
+*wage in the labor force. There are 428 women employed with hours, and 325
+*women have no hours. Since we have a sizable about of 0 (corner soluation), we
+*can use a Tobit model.
+
 use mroz.dta, clear
 
 *Summarize hours
 sum hours
 tab hours if hours == 0
+tab hours inlf
 tabstat hours, by(inlf) stat(mean median sd)
 *We have 325 women who had 0 hours 
+
 histogram hours
 *We have corner solution for women have 0 hours of labor
 
@@ -67,14 +129,36 @@ sum hours if hours > 0
 *OLS Model
 est clear
 eststo OLS: reg hours nwifeinc educ exper expersq age kidslt6 kidsge6
+margins
 
 *Tobit Model
 eststo TOBIT: tobit hours nwifeinc educ exper expersq age kidslt6 kidsge6, ll(0)
+quietly sum exper
+local exp2=r(mean)^2
+*margins, dydx(*) predict(e(0,.)) at(expersq=`exp2')
+*Using ystar tells Stata to act like there is no censoring even though the 
+*model allows for it 
+*https://www.statalist.org/forums/forum/general-stata-discussion/general/1531196-tobit-marginal-effects
+*Average Marginal Effects
+margins, dydx(*) predict(ystar(0,.)) at(expersq=`exp2')
+*Marginal Effects at the Average
+margins, dydx(*) predict(ystar(0,.)) at(expersq=`exp2') atmeans
+
 
 *Compare our results
 esttab OLS TOBIT, mtitle
 
+*Compare Graphs
+est clear
+*OLS Model
+quietly reg hours nwifeinc educ exper expersq age kidslt6 kidsge6
+eststo OLS: margins, at(educ=(0(2)20)) post
 
+*Tobit Model
+quietly tobit hours nwifeinc educ exper expersq age kidslt6 kidsge6, ll(0)
+eststo Tobit: margins, at(educ=(0(2)20)) predict(e(0,6000)) post
+
+coefplot (OLS, ciopts(recast(rline) lpattern(solid))) (Tobit, ciopts(recast(rline) lpattern(dash))), at recast(line)
 
 ********************************************************************************
 *Mitchell
@@ -498,3 +582,36 @@ list, sepby(kidid)
 *Using our short-term panels with the CPS, what is the difference in wages
 *between period1 and period2? Create an indicator variable to see if wages
 *fell by more than 50%.
+
+*
+use "/Users/Sam/Desktop/Econ 645/Data/CPS/jun23pub.dta",replace
+
+
+
+*Generate labor force
+gen inlf = .
+replace inlf = 0 if pemlr >= 5 & pemlr <= 7
+replace inlf = 1 if pemlr >= 1 & pemlr <= 4
+label define inlf1 0 "Not in Labor Force" 1 "In Labor Force"
+label values inlf inlf1
+tab pemlr inlf
+
+*Years of schooling
+replace peeduc = . if peeduc == -1
+
+*Compare
+logit inlf peeduc c.prtage##c.prtage
+margins, dydx(peeduca) at(peeduca=(31(1)46))
+marginsplot
+
+logit inlf peeduc c.prtage##c.prtage
+margins, dydx(peeduca) at(peeduca=(31(1)46)) atmeans
+marginsplot
+
+
+probit inlf peeduca c.prtage##c.prtage
+margins, dydx(peeduca) at(peeduca=(31(1)46))
+marginsplot
+
+*Years of School
+logit inlf 

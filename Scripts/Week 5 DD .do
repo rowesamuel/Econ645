@@ -19,6 +19,10 @@ cd "/Users/Sam/Desktop/Econ 645/Data/Wooldridge"
 **********
 *Effect of Grants on scrap rates
 **********
+*Lesson: We can look at individual firm fixed effects and time fixed effects 
+*for a two-way fixed effects method. This is very similar to our Diff-in-Diff
+*method in certain ways, but we have staggered adoption of the program
+
 use "jtrain.dta", clear
 
 * Michigan implemented a job training grant program to reduce scrap rates.
@@ -30,15 +34,26 @@ use "jtrain.dta", clear
 sort fcode year
 xtset fcode year
 
+*We have 3 years of data for each firm. Some firms get the grant in 1988 and 
+*some get the grant in 1989. This staggered adoption can lead to problems 
+*down the road when we compare treated to already treated.
+
 * Use FD or FE to take care of unobserved firm effects
+*First-Difference Estimator
 reg d.scrap d.grant if year < 1989
+*Within Estimator
 xtreg scrap i.grant i.d88 if year < 1989, fe
 * The change in grant is basically receiving the grant or not, because grant
 * in 1987 is always zero.
 
+*Question: Who gets the grant and why? How were the grants distributed? 
+
 **********
 *Effect of Drunk Driving Laws on Traffic Fatalities
 **********
+*Lesson: We can try to evaluate the effect of drunk driving laws by controlling
+*for unobserved time-invariant effects at the state level.
+
 use "traffic1.dta", clear
 
 * We want to assess open container laws that make it illegal for passengers
@@ -56,10 +71,17 @@ use "traffic1.dta", clear
 * We can use a first difference here. We have two options. Subtract across
 * columns, or reshape and set a panel data set.
 
+* We can see that 3 states change their open container laws
+tab copen
+tab open85 open90
+
 reg cdthrte copen cadmn
 
 * Open containers laws, assuming the strict exogeniety assumption holds, reduce
 * deaths per 100 million miles driven by .42
+
+*Question: what is a potential issue with this? How can we think that strict
+*exogeneity assumption is not satisfied?
 
 **********
 *Diff-in-Diff
@@ -67,6 +89,10 @@ reg cdthrte copen cadmn
 *****
 *Effect of a garbage incinerator's location on housing prices
 *****
+*Lesson: The 2-by-2 Difference-in-Difference estimator is simple to implement
+*when we have our data set up correctly. We can use a sensitivity test to see
+*if our results are robust.
+
 use "kielmc.dta", clear
 
 * Kiel and McClain (1995) studied the effects of garbage incinerator's location
@@ -108,19 +134,24 @@ estimates store mod3
 * Our model ranges from a reduction housing prices between 6.1% and 16.9%
 esttab m1 m2 m3, keep(1.y81 1.nearinc 1.nearinc#1.y81 age agesq ///
                       intst land area rooms baths)
-					  
+*Plot our results			  
 coefplot (mod1, label(Model 1)) (mod2, label(Model2)) (mod3, label(Model 3)), ///
          keep(1.nearinc#1.y81) xline(0) title("Diff-in-Diff Results")
-		 
+*Plot our results in different charts	 
 coefplot mod1, bylabel(Model 1) || mod2, bylabel(Model 2) || ///
-         mod3, bylabel(Model 1) || , ///
+         mod3, bylabel(Model 3) || , ///
          keep(1.nearinc#1.y81) xline(0) title("Diff-in-Diff Results")
 * More on coefplot
 * https://repec.sowi.unibe.ch/stata/coefplot/getting-started.html
 
+*We see that the results are sensitive to the specification. The coefficients
+*range from -6.1% to -16.9%, but their statistical significance varies as well.
+*It would have been helpful to have a larger sample size.
+
 ***********
 *Effect of Worker Compensation Laws on Weeks out of Work
 ***********
+*Lesson: We need a comparison group for the parallel trends assumption. 
 use "injury.dta", clear
 
 * Meyer, Viscusi, and Durbin (1995) studied the length of time that an injured
@@ -130,20 +161,32 @@ use "injury.dta", clear
 * workers, so low-wage workers are our control group and high-wage workers
 * are our treatment group.
 
+tab highearn afchnge
+
+
 * Our diff-in-diff - limited to only KY
 * The policy increased duration of workers' compensation by 21% to 26%
 reg ldurat i.afchnge##i.highearn if ky==1
 reg ldurat i.afchnge##i.highearn i.male i.married i.indust i.injtype if ky==1
 
+* Not in Wooldridge:
+* Is this an appropriate comparison group? I would say no, but high earners
+* vs low earners would be appropriate if we wanted to test a triple difference.
+
 * A triple DDD a way to test our DD - Placebo test
 * We would expect high earners in KY to have an increase in duration but not
-* other states.
+* other states. We want to check to make sure low earners are not affected
+* by the policy change
 
 * Our DD estimate i.afchgne#i.highearn is about the same but not statistically
 * significant. Furthermore, our high earners in KY after the policy are not
 * affected, so our original DD design might not be rigourous enough.
 reg ldurat i.afchnge##i.highearn##i.ky 
 reg ldurat i.afchnge##i.highearn##i.ky i.male i.married i.indust i.injtype
+
+*Questions: Are worker compensation trends similar between low earners and high
+*earners? Why or why not?  Would Michigan make a good comparison group? Can 
+*we test this?
 
 
 ***********

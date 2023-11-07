@@ -13,8 +13,49 @@ cd "/Users/Sam/Desktop/Econ 645/Data/Wooldridge"
 *Wooldridge
 ********************************************************************************
 ****************************
+*Union Wage Premium
+****************************
+*Lesson: we can control for ability and preference for unionization to control
+*for unobserved time-invariant confounders.
+use "wagepan.dta", clear
+
+*Set the Panel
+xtset nr year
+
+*Pooled OLS
+eststo OLS: reg lwage c.edu exper expersq i.black i.south i.married i.union i.d8*
+
+*If we use FE or FD, we cannot assess race, education, or experience 
+*since they remain constant
+eststo Within: xtreg lwage c.edu i.black i.south i.married i.union i.d8*, fe
+
+*These are changes in the returns to education compared to the base year of 1980
+*And only 1987xeducation and 1986xeducation appear to be insignificant
+
+esttab OLS Within, mtitles se scalars(F r2) drop(0.d* 0.union 0.married)
+
+*After controlling for time-invariant individual fixed effects the Pooled
+*OLS is seen to be upward biased.
+*Pooled OLS
+display (exp(.180)-1)*100
+*FE Within
+display (exp(.0844)-1)*100
+
+****************************
 *Has returns to education changed over time
 ****************************
+*Lesson: We can interact time binaries with continuous time-invariant data to
+*see if returns to education have changed over time.
+
+*With fixed effects or first differencing, we cannot assess time-invariant
+*variables. Variables that do not vary over time, such as sex, race, or 
+*education (assuming) education is static. But, if we interact education with
+*time binaries, we can assess whether returns to education have increased 
+*over time.
+
+*We can test to see if returns to education are constant
+*over time, by in
+
 use "wagepan.dta", clear
 
 * Vella and Verbeek (1998) estimate to see if the returns to education have
@@ -30,22 +71,76 @@ use "wagepan.dta", clear
 xtset nr year
 
 *Pooled OLS
-reg lwage c.edu##i.d8* exper expersq i.married i.union
+eststo OLS: reg lwage c.edu##i.d8* exper expersq i.married i.union
 
 *If we use FE or FD, we cannot assess race, education, or experience 
 *since they remain constant, but we can include dummy interactions
-xtreg lwage c.edu##i.d8* married union, fe
+eststo Within: xtreg lwage c.edu##i.d8* i.married i.union, fe
+
 *These are changes in the returns to education compared to the base year of 1980
 *And only 1987xeducation and 1986xeducation appear to be insignificant
+
+esttab OLS Within, mtitles se scalars(F r2) drop(0.d* 0.union 0.married)
+
+*Returns to education have increased by about 3.1% between 1987 and 1980.
+display (exp(0.0304)-1)*100
+
+*Test for Serial Correlation
+xtreg lwage c.edu##i.d8* i.married i.union, fe
+*predict u residuals
+predict u, resid
+*regress u on lag of u AR(1) model without a constant
+reg u l.u, noconst
+*Our null hypothesis is that there is no serial correlation or the coefficient
+*on our lagged residuals is zero. 
+*We can see that we have positive serial correlation since the coefficient on
+*our lagged residual is positive and statistically significant.
+*We will need to cluster our standard errors to account for the positive 
+*serial correlation
+
+***
+*Wage Gap
+***
+
+*If we use FE or FD, we cannot assess race, education, or experience 
+*since they remain constant, but we can include dummy interactions
+
+*Let's test this for a wage gap between Black workers and non-Black workers.
+*With Fixed Effects (Within) estimator we cannot estimate the wage gap, so
+*we'll use Pooled OLS 
+est clear
+eststo OLS: reg lwage c.edu##i.d8* i.black##i.d8* exper expersq i.married i.union
+
+eststo Within: xtreg lwage c.edu##i.d8* i.black##i.d8* i.married i.union, fe
+
+esttab OLS Within, mtitles se scalars(F r2) drop(0.d* 0.b* 1.black#0.d* 0.union 0.married)
+
+*Test for Serial Correlation
+xtreg lwage c.edu##i.d8* i.black##i.d8* i.married i.union, fe
+*predict u residuals
+predict u1, resid
+*regress u on lag of u AR(1) model without a constant
+reg u1 l.u1, noconst
+*Our null hypothesis is that there is no serial correlation or the coefficient
+*on our lagged residuals is zero. 
+*We can see that we have positive serial correlation since the coefficient on
+*our lagged residual is positive and statistically significant.
+*We will need to cluster our standard errors to account for the positive 
+*serial correlation
 
 ****************************
 *Returns to Marriage for Men
 ****************************
+*Lesson: We can test to see if random effects is an appropriate assumption.
+
+*We'll use three methods to estimate the returns to marriage for men: Pooled OLS,
+*Fixed Effects (Within), and Random Effects. We cannot estimate the coefficients
+*for Black and Latino/Latina. 
+
 use "wagepan.dta", clear
 
 * We can use the wagepan data again to estimate the returns to marriage for
 * men. We will compare the Pooled OLS, FE (Within), and Random Effects estimates
-
 
 *Set Panel
 xtset nr year
@@ -54,7 +149,9 @@ xtset nr year
 reg lwage educ i.black i.hisp exper expersq married union i.d8*
 eststo m1: quietly reg lwage educ i.black i.hisp exper expersq married union i.d8*
 
-* The Pooled OLS data are likley upward biased - self-selection into marraige
+*The Pooled OLS data are likley upward biased - self-selection into marriage
+*and we will have positive serial correlation so we really should cluster 
+*our standard errors by the group id. 
 
 * Our FE (Within)
 xtreg lwage educ i.black i.hisp exper expersq married union i.d8*, fe
@@ -68,15 +165,29 @@ eststo m2: quietly xtreg lwage educ i.black i.hisp exper expersq married union i
 xtreg lwage educ i.black i.hisp exper expersq married union i.d8*, re theta
 eststo m3: quietly xtreg lwage educ i.black i.hisp exper expersq married union i.d8*, re
 
+*Our lambda-hat is 0.643, which means it is closer to the FE estimator than
+*the Pooled OLS estimator. 
 
 *Hausman Test
 hausman femodel ., sigmamore
 * We reject the null hypothesis and a_i is correlated with the explanatory 
-* variables - We likely reject the Random Effects Model
+* variables - We reject the Random Effects Model
 
 esttab m1 m2 m3, drop(0.black 0.hisp 0.d8*) ///
                  mtitles("Pooled OLS" "Within Model" "RE Model")
 
+display (exp(.108)-1)*100
+display (exp(.0467)-1)*100
+display (exp(.064)-1)*100
+
+*We can see that the marriage premium falls from 11.4% in Pooled OLS to 4.8%
+*in Fixed Effects. If we didn't reject our RE model, it would have been 6.6%.
+
+*The difference between the 11.4% Pooled OLS and the 4.8% in the Within Model
+*might comes from self-selection in marriage (they would have made more money
+*even if they weren't married), and employers paying married men more if 
+*marriage is a sign of stability. But, we cannot distinguish these two 
+*hypothesis with this research design.
 				 
 ***********
 *Exercises

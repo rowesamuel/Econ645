@@ -20,6 +20,9 @@ cd "/Users/Sam/Desktop/Econ 645/Data/Wooldridge"
 *Let's look at the data for married working women
 use mroz.dta, clear
 
+*Lesson: Constant Elasticity and Non-constant elasticity are different concepts
+*in our function form assumptions ln-ln vs linear-ln
+
 *Our labor supply equation
 *hours=a1*ln(wage) + b10 + b11*educ + b12*age + b13*kidslt6 + b14*nwifeinc + u1
 
@@ -181,7 +184,7 @@ correlate bp1 bp2 bp3 bp4 bp5
 *Mitchell also mentions that multivariate analysis with multiple trials
 *is a bit easier with factor variables. If we wanted to see all of the 
 *different regressions for each trial, then
-mvreg bp*=age
+mvreg bp* = age
 
 *Long Format:
 *If we want correlations between blood pressure and pulse, a long format is 
@@ -294,7 +297,7 @@ use cardio_long2, clear
 list in 1/10
 *We see that cross-sectional unit 1 has a data entry problem with age in the
 *3rd trial. If we reshape, we will get an error
-reshape wide bp pl, i(id) j(trial)
+capture reshape wide bp pl, i(id) j(trial)
 
 *Use the reshape error command to help with the problem
 reshape error
@@ -303,7 +306,7 @@ reshape error
 
 *Problem 2: excluding a non-constant that we need to reshape.
 *If we excluded pl from our reshape, we will get a similar error
-reshape wide bp, i(id) j(trial)
+capture reshape wide bp, i(id) j(trial)
 reshape error
 
 **************
@@ -362,7 +365,7 @@ reshape long bp pl, i(id) j(trialnum)
 *value at the end
 use cardio_wide2, clear
 describe
-reshape long tpl tpb, i(id) j(trialnum)
+capture reshape long tpl tpb, i(id) j(trialnum)
 reshape error
 
 *We need the operator @ to indicate to Stata that our varying-values are in
