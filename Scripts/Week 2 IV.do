@@ -357,20 +357,37 @@ use "https://data.nber.org/morg/annual/morg20.dta", clear
 ********
 *Reading Stata data with subsets
 ********
+*Sometimes we do not want the entire dataset, so we can ingest a subset.
+*For example, we have 
+cd "/Users/Sam/Desktop/Econ 645/Data/CPS/"
+use "jan24pub.dta", clear
+*Number of Rows
+display _N
+*Columns
+ds
+
+*If we use the list command, it would be to wieldly to use
+
 *Subsetting by columns
 *Reading a subset of the Stata data - if you know the variable names
-use name years using "dentists.dta", clear
+*use name years using "dentists.dta", clear
+use pemlr gestfips using "jan24pub.dta", clear
 *list the data - which I don't recommend with large data sets
-list 
+list in 1/50
 
 *Subsetting by rows (observations)
-use "dentists.dta" if years >= 10, clear
-list
+*use "dentists.dta" if years >= 10, clear
+*list
+*Read in only observations from Maryland - but hard to read
+use "jan24pub.dta" if gestfips == 24, clear
+list in 1/50
 
 *Subsetting by row and columns
-use name year using "dentists.dta" if years >= 10, clear
-list
+*use name year using "dentists.dta" if years >= 10, clear
+use pemlr gestfips using "jan24pub.dta" if gestfips == 24, clear
+list in 1/50
 
+*My recommendation:
 *Reading the data dictionary beforehand will help, especially with larger files
 *such as the PUMS ACS or CPS
 
@@ -395,16 +412,28 @@ webuse fullauto, clear
 *Be careful if the headers are numerics, such as years, in the firstrow.
 *This will throw an error and we'll need to rename them in Excel before importing
 *these files.  For example, 2015 becomes y2015
-import excel using "dentists.xls", firstrow clear
-list 
+cd "/Users/Sam/Desktop/Econ 645/Data/BLS/"
+*import excel using "dentists.xls", firstrow clear
+*list
+import excel using "tfp_major_sector_long.xlsx", firstrow clear
+list in 1/5
 
 *We need to take caution of the sheet names of the excel files we are importing
-*If you don't pay attention you may import the wrong sheet.
-import excel using "dentists2.xls", firstrow clear
-list
+*If you don't pay attention you may not get the correct rows
+import excel using "tfp_major_sector_wide.xlsx", firstrow clear
+list in 1/2
+import excel using "tfp_major_sector_wide.xlsx", firstrow cellrange("A2") clear
+list in 1/2
 
-import excel using "dentists2.xls", firstrow clear sheet("dentists")
-list
+*If you don't pay attention you may import the wrong sheet.
+import excel using "tfp_major_sector_wide.xlsx", firstrow sheet("MachineReadable") clear
+list in 1/2
+
+*import excel using "dentists2.xls", firstrow clear
+*list
+
+*import excel using "dentists2.xls", firstrow clear sheet("dentists")
+*list
 
 **************
 *2.4 Importing SAS files
@@ -469,10 +498,13 @@ list
 *If you read the manual you'll noticed that "," and "\t" are the default 
 *delimiters
 *Using "," delimter
-import delimited using "dentists.csv", clear
-list 
+*import delimited using "dentists.csv", clear
+cd "/Users/Sam/Desktop/Econ 645/Data/CPS/"
+import delimited using "jan24pub.csv", clear
+list in 1/2
 
 *CSV files may come in .txt files or .csv files using "," delimiter
+cd "/Users/Sam/Desktop/Econ 645/Data/Mitchell"
 import delimited using "dentists1.txt", clear
 list
 
@@ -493,9 +525,10 @@ import delimited using "dentists2.txt", clear rowrange(1:3)
 list
 
 *Import delimited from the web
-import delimited using "https://www2.census.gov/programs-surveys/cps/datasets/2023/basic/jun23pub.csv", clear
-pwd
-save "jun23pub.dta", replace
+import delimited using "https://www2.census.gov/programs-surveys/cps/datasets/2024/basic/jan24pub.csv", clear
+list in 1/2
+*pwd
+*save "jun23pub.dta", replace
 
 ***********
 *Import space-separated files
@@ -515,6 +548,7 @@ list
 ***********
 *Importing fixed-column files
 ***********
+*This is key to know when the data are not in a user-friendly format!
 *Unfortunately, fixed-column files are more common than I prefer.  They are a 
 *pain, since you need to specify each column length. I have found this with
 *files with a ".dat" file extension.
