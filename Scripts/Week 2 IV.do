@@ -17,6 +17,7 @@ cd "/Users/Sam/Desktop/Econ 645/Data/Wooldridge"
 ******************
 *Estimating Returns to Education for Married Women
 ******************
+*MROZ dataset contains
 use "mroz.dta", clear
 
 *We'll use the data on married working women to estimate the return to education
@@ -151,6 +152,8 @@ reg lwage educ_hat exper expersq i.black i.smsa i.south i.smsa66 reg662-reg669
 *(exp(0.132)-1)*100%=14.1%
 
 *Using 2SLS
+*We can use the ivregress command
+*ivregress 2sls <dependent variable> (<biased var>=<iv>) x1 x2 x3...xk
 ivregress 2sls lwage (educ=nearc4) exper expersq i.black i.smsa i.south ///
                                    i.smsa66 reg662-reg669, first
 
@@ -228,6 +231,10 @@ reg lwage educ c.exper##c.exper r
 *There is possible evidence of endogeneity since p < .1 but p > .05
 *You should report IV and OLS 
 
+eststo m1: reg lwage educ c.exper##c.exper
+eststo m2: ivregress 2sls lwage (educ=fatheduc motheduc) c.exper##c.exper
+esttab m1 m2, mtitle(OLS IV)
+
 *2) With estat
 *We can also use a postestimation command estat endogenous
 ivregress 2sls lwage (educ=fathedu mothedu) c.exper##c.exper
@@ -299,6 +306,11 @@ estat overid
 * around education has changed as well.
 
 * It is a good idea to report both in a sensitivity analysis
+
+est clear
+eststo m1: quietly ivregress 2sls lwage (educ=motheduc fatheduc) c.exper##c.exper
+eststo m2: quietly ivregress 2sls lwage (educ=motheduc fatheduc huseduc) c.exper##c.exper
+esttab m1 m2, mtitle(2IVs 3IVs)
 
 ********************************************************************************
 *Mitchell
