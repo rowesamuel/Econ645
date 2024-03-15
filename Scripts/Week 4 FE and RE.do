@@ -41,6 +41,31 @@ display (exp(.180)-1)*100
 *FE Within
 display (exp(.0844)-1)*100
 
+*Plot the Coefficients of Interest
+*Store the models
+*Credit: John Kane: https://medium.com/the-stata-gallery/making-regression-coefficient-plots-in-stata-7b100feac0cb
+quietly reg lwage c.edu exper expersq i.black i.south i.married i.union i.d8*
+estimates store pooled
+quietly xtreg lwage c.edu i.black i.south i.married i.union i.d8*, fe
+estimates store fe
+coefplot (pooled, label("{bf:Pooled OLS}") mcolor(midblue) mlcolor(cyan) ///
+                  ciopts(lcolor(magenta midblue))) /// options for first group
+	     (fe, label("{bf: Within}") mcolor(green) mlcolor(lime) ///
+		      ciopts(lcolor(lime green))), /// options for second gropu
+	     title(Union and Marriage Wage Premiums) ///
+		 drop(_cons 1.d* 0.black 0.south) ///
+		 xline(0, lcolor(red) lwidth(medium)) scheme(jet_white) ///
+		 xtitle("{bf: Effect of Union}") ///
+		 graphregion(margin(small)) ///
+		 coeflabels(educ="Education" exper="Experience" expersq="Experience Squared" ///
+		            1.black="Black" 1.south="South" 1.married="Married" ///
+					1.union="Union") ///
+		 msize(large) mcolor(%85) mlwidth(medium) msymbol(circle) /// marker options
+		 levels(95 90) ciopts(lwidth(medthick thick) recast(rspike rcap)) ///ci options for all groups
+		 legend(ring(1) col(1) pos(3) size(medsmall))
+graph export "/Users/Sam/Desktop/Econ 645/Stata/week4_union_wage_premium.png", replace
+  
+
 ****************************
 *Has returns to education changed over time
 ****************************
@@ -84,6 +109,33 @@ esttab OLS Within, mtitles se scalars(F r2) drop(0.d* 0.union 0.married)
 
 *Returns to education have increased by about 3.1% between 1987 and 1980.
 display (exp(0.0304)-1)*100
+
+*Plot the Coefficients of Interest
+*Store the models
+*Credit: John Kane: https://medium.com/the-stata-gallery/making-regression-coefficient-plots-in-stata-7b100feac0cb
+quietly reg lwage c.edu##i.d8* exper expersq i.married i.union
+estimates store pooled
+quietly xtreg lwage c.edu##i.d8* i.married i.union, fe
+estimates store fe
+coefplot (pooled, label("{bf:Pooled OLS}") mcolor(midblue) mlcolor(cyan) ///
+                  ciopts(lcolor(magenta midblue))) /// options for first group
+	     (fe, label("{bf: Within}") mcolor(green) mlcolor(lime) ///
+		      ciopts(lcolor(lime green))), /// options for second gropu
+	     title("Change in Return to Education") ///
+		 keep(educ 1.d81#c.educ 1.d82#c.educ 1.d83#c.educ 1.d84#c.educ ///
+		           1.d85#c.educ 1.d86#c.educ 1.d87#c.educ) ///
+		 xline(0, lcolor(red) lwidth(medium)) scheme(jet_white) ///
+		 xtitle("{bf: Coefficients}") ///
+		 graphregion(margin(small)) ///
+		 coeflabels(educ="Education" 1.d81#c.educ="1981 Returns" ///
+		            1.d82#c.educ="1982 Returns" 1.d83#c.educ="1983 Returns" ///
+					1.d84#c.educ="1984 Returns" 1.d85#c.educ="1985 Returns" ///
+					1.d86#c.educ="1986 Returns" 1.d87#c.educ="1987 Returns") ///
+		 msize(large) mcolor(%85) mlwidth(medium) msymbol(circle) /// marker options
+		 levels(95 90) ciopts(lwidth(medthick thick) recast(rspike rcap)) ///ci options for all groups
+		 legend(ring(1) col(1) pos(3) size(medsmall))
+graph export "/Users/Sam/Desktop/Econ 645/Stata/week4_edu_returns.png", replace
+
 
 *Test for Serial Correlation
 xtreg lwage c.edu##i.d8* i.married i.union, fe
@@ -188,6 +240,31 @@ display (exp(.064)-1)*100
 *even if they weren't married), and employers paying married men more if 
 *marriage is a sign of stability. But, we cannot distinguish these two 
 *hypothesis with this research design.
+
+*Plot the Coefficients
+quietly reg lwage educ i.black i.hisp exper expersq married union i.d8*
+estimates store pooled
+quietly xtreg lwage educ i.black i.hisp exper expersq married union i.d8*, fe
+estimates store fe
+quietly xtreg lwage educ i.black i.hisp exper expersq married union i.d8*, re theta
+estimates store re
+coefplot (pooled, label("{bf:Pooled OLS}") mcolor(midblue) mlcolor(cyan) ///
+                  ciopts(lcolor(magenta midblue))) /// options for first group
+	     (fe, label("{bf: Within}") mcolor(green) mlcolor(lime) ///
+		      ciopts(lcolor(lime green))) /// options for second group
+		 (re, label("{bf: Random Effects}") mcolor(yellow) mlcolor(gold) ///
+		      ciopts(lcolor(gold yellow))), /// options for third group
+	     title("Returns to Marriage for Men") ///
+		 keep(married) ///
+		 xline(0, lcolor(red) lpattern(dash) lwidth(medium)) scheme(jet_white) ///
+		 xtitle("{bf: Coefficients}") ///
+		 graphregion(margin(small)) ///
+		 coeflabels(married="Married") ///
+		 msize(large) mcolor(%85) mlwidth(medium) msymbol(circle) /// marker options
+		 levels(95 90) ciopts(lwidth(medthick thick) recast(rspike rcap)) ///ci options for all groups
+		 legend(ring(1) col(1) pos(3) size(medsmall))
+graph export "/Users/Sam/Desktop/Econ 645/Stata/week4_married_returns.png", replace
+
 				 
 ***********
 *Exercises
