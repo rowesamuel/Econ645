@@ -68,16 +68,19 @@ est clear
 quietly reg inlf nwifeinc educ exper expersq age kidslt6 kidsge6
 eststo lpm: margins, at(educ=(0(2)20)) post
 marginsplot, yline(0)
+graph export "/Users/Sam/Desktop/Econ 645/Stata/week8_inlflpm.png"
 
 *Logit
 quietly logit inlf nwifeinc educ exper expersq kidslt6 kidsge6
 eststo logit1: margins, at(educ=(0(2)20)) post
 marginsplot, yline(0)
+graph export "/Users/Sam/Desktop/Econ 645/Stata/week8_inlflogit.png"
 
 *Probit
 quietly probit inlf nwifeinc educ exper expersq age kidslt6 kidsge6
 eststo probit1: margins, at(educ=(0(2)20)) post
 marginsplot, yline(0)
+graph export "/Users/Sam/Desktop/Econ 645/Stata/week8_inlfprobit.png"
 
 coefplot lpm logit1, at recast(line) ciopts(recast(rline) lpattern(dash))
 coefplot lpm probit1, at recast(line) ciopts(recast(rline) lpattern(dash))
