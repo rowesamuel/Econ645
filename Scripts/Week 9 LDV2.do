@@ -373,11 +373,27 @@ label values region region1
 tab region
 tab region topcoded, row
 
-reg lnwage i.edu exp expsq i.marital i.veteran i.union i.female i.race
-tobit lnwage i.edu exp expsq i.marital i.veteran i.union i.female i.race, ul(12.57)
+save "/Users/Sam/Desktop/Econ 645/Data/CPS/jan2024.dta", replace
+
+*Tobit Estimator - Right Censoring
+use "/Users/Sam/Desktop/Econ 645/Data/CPS/jan2024.dta", clear
+histogram earnings if prerelg==1, normal title(Histogram of Weekly Earnings) caption("Source: Current Population Survey")
+histogram lnearnings if prerelg==1, normal title(Histogram of LN Weekly Earnings) caption("Source: Current Population Survey")
+
+sum earnings if prerelg==1, detail
+sum lnearnings if prerelg==1, detail
+return list
+local maxval `r(max)'
+
+est clear
+eststo OLS: reg lnearnings i.edu exp expsq i.marital i.veteran i.union i.female i.race
+eststo Tobit: tobit lnearnings i.edu exp expsq i.marital i.veteran i.union i.female i.race, ul(`maxval')
+
+esttab OLS Tobit, drop(0.* 1.race* 1.mar* 1.edu) mtitle("OLS" "Tobit")
+x
 
 
-*Censored Regressional Model - Duration analysis
+*Censored Regression Model - Duration analysis
 *Lesson: We can look at a censored data for duration analysis similar to 
 *Wooldridge's example. This differs from a top-coded data, which we can
 *use a Tobit analysis. For example, wages are top-coded at $2800 in the CPS,
